@@ -1,0 +1,69 @@
+{
+  "seed": 8920,
+  "data_status": "SYNTHETIC",
+  "features": [
+    "cycle_ratio",
+    "variance_pct",
+    "change_orders",
+    "late_days"
+  ],
+  "percentile": 90.0,
+  "train_end": "2026-05",
+  "calibration_end": "2026-06",
+  "split": {
+    "training": 670,
+    "calibration": 134,
+    "test": 396
+  },
+  "quality": {
+    "rows": 1200,
+    "columns": 14,
+    "missing_late_days": 38,
+    "delivery_completeness": 0.9683333333333334,
+    "duplicate_ids": 0,
+    "start": "2026-01",
+    "end": "2026-09"
+  },
+  "models": {
+    "isolation_forest": {
+      "cases": 396,
+      "tp": 37,
+      "fp": 0,
+      "fn": 1,
+      "tn": 358,
+      "alerts": 37,
+      "alert_rate": 0.09343434343434344,
+      "precision": 1.0,
+      "recall": 0.9736842105263158,
+      "f1": 0.9866666666666667,
+      "auc": 0.9999264922081741
+    },
+    "one_class_svm": {
+      "cases": 396,
+      "tp": 21,
+      "fp": 10,
+      "fn": 17,
+      "tn": 348,
+      "alerts": 31,
+      "alert_rate": 0.07828282828282829,
+      "precision": 0.6774193548387096,
+      "recall": 0.5526315789473685,
+      "f1": 0.6086956521739131,
+      "auc": 0.915907086151132
+    },
+    "rules": {
+      "cases": 396,
+      "tp": 38,
+      "fp": 5,
+      "fn": 0,
+      "tn": 353,
+      "alerts": 43,
+      "alert_rate": 0.10858585858585859,
+      "precision": 0.8837209302325582,
+      "recall": 1.0,
+      "f1": 0.9382716049382716,
+      "auc": null
+    }
+  },
+  "note": "Threshold and hyperparameters fixed without test labels. Model comparison does not select an operational winner."
+}
